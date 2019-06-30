@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>contact</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/contact.css">
+	<link rel="shortcut icon" href="../img/avana.png">
+	<script src='../js/jquery.min.js' type="text/javascript"></script>
+	<script src="../js/bootstrap.js" type="text/javascript"></script></script>
+	<script src="../js/contact.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=2jXozhRcs84kVaV6HzGTLSeGWIHDxmoG"></script>
+	
+</head>
+<body>
+	<nav class="myNav">
+		<div class="navbar-header">
+	      <a class="navbar-brand mybrandLink" href="#">
+	        <img class="mybrand" src="../img/logo.png" alt="">
+	      </a>
+	      <span class="glyphicon glyphicon-menu-hamburger menuBtn"></span>
+	    </div>
+	  <ul class="myMenu nav navbar-nav navbar-right">
+	  	<li><a href="../index.html" title="">首页</a></li>
+	  	<li class="shop"><a href="shop.html" title="">商店 <span class="glyphicon glyphicon-menu-down"></span></a>
+			<ul class="mysecMenu dropdown">
+				<li><a href="shop.html" title="">洁面</a></li>
+				<li><a href="shop.html" title="">保养</a></li>
+				<li><a href="shop.html" title="">美妆</a></li>
+			</ul>
+	  	</li>
+	  	<li><a href="about.html" title="">关于</a></li>
+	  	<li><a href="brandStory.html" title="">品牌故事</a></li>
+	  	<li><a href="news.html" title="">资讯</a></li>
+	  	<li class="navActive"><a href="contact.html" title="">联系</a></li>
+	  </ul>
+	</nav>
+
+<section id="mybanner">
+	<div class="fadeInBottom">
+		<h1>联系</h1>
+		<h2>你的美丽应该陪伴你一生</h2>
+	</div>
+</section>
+
+<main id="main">
+		<div class="row">
+			<div class="col-md-1 col-xs-12 col-sm-1 empty">
+			</div>
+			<div class="col-md-5 col-xs-12 col-sm-5">
+				<h2>联系方式</h2>
+				<ul>
+					<li>
+						<div class="col-md-2 col-xs-2 col-sm-2 picBox">
+							<img src="../img/address.png" alt="">
+						</div>
+						<div class="col-md-10 col-xs-10 col-sm-10">
+							<p class="contactTitile">公司地址</p>
+							<p class="contactDetails">广东省广州市黄埔区企业加速器</p>
+						</div>
+					</li>
+					<li>
+						<div class="col-md-2 col-xs-2 col-sm-2 picBox">
+							<img src="../img/phone.png" alt="">
+						</div>
+						<div class="col-md-10 col-xs-10 col-sm-10">
+							<p class="contactTitile">联系电话</p>
+							<p class="contactDetails">100-000-0000</p>
+						</div>
+					</li>
+					<li>
+						<div class="col-md-2 col-xs-2 col-sm-2 picBox">
+							<img src="../img/mail.png" alt="">
+						</div>
+						<div class="col-md-10 col-xs-10 col-sm-10">
+							<p class="contactTitile">电子邮箱</p>
+							<p class="contactDetails">100000@qq.com</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-5 col-xs-12 col-sm-5" id="map">
+				
+			</div>
+		</div>
+</main>
+
+
+<footer id="footer">
+	<div class="footerTitle">
+		<h1>A V A N A</h1>
+		<h2>你的美丽应该陪伴你一生</h2>
+	</div>
+	<hr>
+	<div class="row">
+		<div id="footerL" class="col-md-6 col-xs-12 col-sm-6">
+			<p>电话：100-000-0000</p>
+			<p>邮箱：10000@qq.com</p>
+			<p>地址：中国互联网省域名市网站区666号</p>
+		</div>
+		<div class="col-md-1">
+		</div>
+		<div id="footerR" class="col-md-5 col-xs-12 col-sm-6">
+			<p>获取更多美妆资讯:</p>
+			<input type="email" name="" value="" placeholder="请输入邮箱">
+			<button type="submit">提交</button>
+		</div>
+	</div>
+	<p id="lastText">© Copyright 2018 xxx.com。</p>
+</footer>	
+
+<div id="goTop">
+	<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+</div>
+
+
+<script>
+	function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(113.502662,23.159672),15);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"广州市黄埔区企业加速器",title:" ANANA",imageOffset: {width:0,height:3},position:{lat:23.16253,lng:113.502878}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+        map.setMapStyleV2({     
+          styleId: '8abcdd2d2266cee0d73889439d990b47'
+        });
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+    initMap();
+</script>
+</body>
+</html>
