@@ -388,3 +388,6 @@
     line-height: 40px;
     color: white;
 }
+.BMapLabel {
+	border: none!important;
+}
